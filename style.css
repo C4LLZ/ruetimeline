@@ -1,0 +1,78 @@
+#timeline-container {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+}
+
+#timeline-line {
+    position: absolute;
+    left: 50%; /* Center the line */
+    height: 1000%;
+    width: 2px;
+    background-color: #333;
+}
+
+.timeline-item {
+    position: relative;
+    min-width: 100px;
+    max-width:750px
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 10px; /* Dot size */
+    height: 10px; /* Dot size */
+    background-color: #fff; /* Dot color */
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -5px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: auto;
+    right: -5px;
+}
+
+.timeline-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px; /* Adjust as needed for roundness */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+.timeline-item p {
+    background-color: white;
+    padding: 5px;
+}
+
+.timeline-connector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it spans the full width */
+    height: 100%; /* Ensure it spans the full height */
+    z-index: 1; /* Adjust as needed */
+}
+
+
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send it to the back */
+}
+
+.bg {
+    background: url(https://i.ibb.co/87GbbFP/2799006.jpg) no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -3;
+}
