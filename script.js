@@ -27,6 +27,53 @@ window.addEventListener('scroll', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    timelineItems.forEach(item => {
+        // Randomize duration for a more natural effect
+        const duration = Math.random() * 10 + 10; // Between 10 and 20 seconds
+
+        item.style.animationDuration = `${duration}s`;
+    });
+
+});
+
+function smoothScrollTo(element, duration) {
+    const yOffset = -window.innerHeight / 2; // Half the screen height
+    const targetPosition = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const startButton = document.getElementById('startButton');
+    const firstTimelineItem = document.getElementById('FirstTimeLineItem');
+
+    startButton.addEventListener('click', () => {
+        smoothScrollTo(firstTimelineItem, 1000); // Scroll over 1000ms
+    });
+});
+
+
 let lines = [];
 
 function positionAndConnectLines() {

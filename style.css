@@ -1,3 +1,44 @@
+#landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    background: url('path_to_background_image.jpg') no-repeat center center; 
+    background-size: cover; /* Optionally set a background image */
+    text-align: center;
+    color: #ffffff; /* Adjust text color as needed */
+}
+
+#landing-page h1 {
+    font-size: 3em; /* Adjust size as needed */
+    margin-bottom: 20px;
+}
+
+#landing-page p {
+    font-size: 1.5em; /* Adjust size as needed */
+    margin-bottom: 40px;
+}
+
+#startButton {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly visible border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#startButton:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Lighter shade on hover */
+    transform: scale(1.05); /* Slight scale up effect on hover */
+}
+
+
 #timeline-container {
     position: relative;
     width: 100%;
@@ -26,18 +67,24 @@
     padding: 20px; /* Some padding around content */
     margin-bottom: 20px; /* Space between items */
     color: white; /* Assuming you want light text for dark mode */
+    
 }
 
 .timeline-item img {
-    max-width: 100%; /* Ensure image fits in the container */
+    width: 100%; /* Make the image fill the width of the container */
+    max-height: 400px; /* Make the image fill the height of the container */
+    object-fit: cover; /* Cover the area without losing aspect ratio */
+    border-radius: 10px; /* Optional: if you want rounded corners */
     height: auto; /* Maintain aspect ratio */
     border-radius: 10px; /* Optional: Rounded corners for images */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Shadow for images */
+    animation: floatAnimation 15s ease-in-out infinite;
 }
 
 .timeline-item p {
     margin-top: 10px; /* Space between image and text */
     /* Additional styling for the description text */
+    animation: floatAnimation 15s ease-in-out infinite;
 }
 
 .leader-line {
@@ -95,3 +142,13 @@ canvas {
     left: 0;
     z-index: -3;
 }
+
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translate(0, 0) rotate(0); }
+    25% { transform: translate(-2px, -2px) rotate(-1deg); }
+    50% { transform: translate(2px, 2px) rotate(1deg); }
+    75% { transform: translate(-2px, 2px) rotate(-0.5deg); }
+}
+  
+  
