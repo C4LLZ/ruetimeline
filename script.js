@@ -185,14 +185,18 @@ function Particle(x, y, directionX, directionY, size, color) {
     this.directionY = directionY;
     this.size = size;
     this.color = color;
+    this.bloom = Math.random() * 10 + 2; // Adjust the bloom intensity as needed
 }
 
-// Add draw method to particle prototype
+// Modify the draw method to apply the bloom effect
 Particle.prototype.draw = function() {
+    ctx.shadowBlur = this.bloom; // Set the shadow blur to the bloom value
+    ctx.shadowColor = this.color; // Set the shadow color to the particle color
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
     ctx.fillStyle = this.color;
     ctx.fill();
+    ctx.shadowBlur = 0; // Reset the shadow blur after drawing
 };
 
 // Add update method to particle prototype
@@ -240,8 +244,26 @@ window.addEventListener('resize', () => {
     init();
 });
 
+document.addEventListener('scroll', function () {
+    const parallaxBg = document.querySelector('.parallax-bg');
+    const scrollValue = window.scrollY;
+
+    // Adjust the background position based on scroll value to create the parallax effect
+    parallaxBg.style.backgroundPositionY = -scrollValue * 0.1 + 'px';
+});
+
 // Run the functions
 init();
 animate();
 positionTimelineItems();
 
+
+const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+}
+
+document.addEventListener('click',activate,false);

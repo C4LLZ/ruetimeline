@@ -5,31 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timeline Project</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
 </head>
 <body>
 
+
     <div id="landing-page">
         <h1>Our Timeline</h1>
-        <p>For the best wife to ever exist on this planet</p>
+        <p>I can't write songs. So here is our timeline on a website instead</p>
         <button id="startButton">Start the Journey</button>
     </div>
-
+    <div class="parallax-bg"></div>
+    <canvas id="canvas2" class="bg"></canvas>
     <canvas id="canvas" class="bg"></canvas>
     <div id="timeline-container">
         <div id="timeline-line">
-            <!-- Start date at the top of the timeline -->
-            <div class="timeline-date start-date">05/24/2021</div>
         
             <!-- Dots corresponding to each timeline item -->
             <div class="timeline-dot">
-                <div class="dot-date">Date 1</div>
+                <div class="dot-date">05/17/2021</div>
             </div>
             <div class="timeline-dot">
-                <div class="dot-date">Date 2</div>
+                <div class="dot-date">09/03/2021</div>
             </div>
             <div class="timeline-dot">
-                <div class="dot-date">Date 3</div>
+                <div class="dot-date">10/17/2021</div>
             </div>
+            <div class="timeline-dot">
+                <div class="dot-date">11/08/2021</div>
+            </div>
+            <div class="timeline-dot">
+                <div class="dot-date">09/11/2023</div>
+            </div>
+
         </div>
         
 
@@ -37,24 +47,99 @@
         <div class="timeline-item" id="FirstTimeLineItem">
             <div class="timeline-dot"></div>
             <div class="timeline-connector"></div> 
-            <img src="https://media.discordapp.net/attachments/855590080021135412/1174169277297856563/image.png" alt="Event 1">
-            <p>This is how you looked like when I fist met you. The Rue I fell in love with after some time. So cute and innocent</p>
+            <img src="https://media.discordapp.net/attachments/855590080021135412/1174302762968825856/VladRue.png" alt="Event 1">
+            <p>Us on our first wedding day. This is something that still blows me away: that we barely knew each other when we first got married. But you insisted on me joining the thrupple. And yes, I did cut away that weirdo from the picture</p>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-connector"></div> 
-            <img src="https://media.discordapp.net/attachments/1146594817573392504/1152338897351757986/a67pc2Ciw5.png?ex=6561063a&is=654e913a&hm=7fa1155b433c5aade1a3ad034b49f990391235f2d440923b0c08144c9758e45b&=&width=989&height=535" alt="Event 1">
-            <p>Description for the first event</p>
+            <img src="https://media.discordapp.net/attachments/673934775400136749/883150744331616287/image_4.png" alt="Event 1">
+            <p>First car I ever gave you. I remember taking you to our spot up in Paleto and the boys helping me. It's kind of a tradition at this point to take you there and give you things. One of the best moments is seeing you smile and be all excited. This is also where we started to get closer and closer, and where I started to understand how lucky I am
+            </p>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-connector"></div> 
-            <img src="https://media.discordapp.net/attachments/1146594817573392504/1152338897351757986/a67pc2Ciw5.png?ex=6561063a&is=654e913a&hm=7fa1155b433c5aade1a3ad034b49f990391235f2d440923b0c08144c9758e45b&=&width=989&height=535" alt="Event 1">
-            <p>Description for the first event</p>
+            <img src="https://media.discordapp.net/attachments/897766039448850483/899145755196002325/Jammies_Book.png" alt="Event 1">
+            <p>Our first house together, And one of my favorite pictures of us in it. I miss these times when we would just sit and enjoy life together.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-connector"></div> 
+            <img src="https://media.discordapp.net/attachments/673934775400136749/907087540375421000/Tz2xsKX.png" alt="Event 1">
+            <p>This was when we renewed our vows, and I still remember this day being one of the best ones I have ever had. Seeing you walk up to me in that dress was something every man dreams of. You made my dreams come true again that day . I remember being really nervous, thinking something would go wrong, but everything went perfectly.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-connector"></div> 
+            <img src="https://media.discordapp.net/attachments/1146594817573392504/1150593061215293590/TsEy9ODyhw.png" alt="Event 1">
+            <p>There is so much that has happened in the last 2,5 years. You have made me into the man I am today, and I'm so grateful for that. You are the person that I would never even imagine finding in a world like this. I really am the luckiest man on earth, and I would do anything for you. Look at us in this picture. BOSS ASS BITCHES. You and I have made it so far from where we started, and I'm really proud to call you my Wife and the love of my life. Thank you for everything
+            </p>
         </div>
     </div>
+
+    <div class="photos">
+        <ul class='slider'>
+          <li class='item' style="background-image: url('https://media.discordapp.net/attachments/673934775400136749/881742158653186108/Screenshot_1858.png?ex=65640ce0&is=655197e0&hm=541344dd4aeb16d5e0a04f82535111c7cea39c1311af0d068a0c39878e8aaeea&=&width=517&height=670')">
+            <div class='content'>
+              <h2 class='title'>"Partners in Crime"</h2>
+              <p class='description'> This photo brings back so many memories for me. That was back when we were grinding day and night</p>
+              <button>08/30/2021</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://media.discordapp.net/attachments/673934775400136749/896679936381829120/Screenshot_2561.png?ex=656305c4&is=655090c4&hm=b516ab5158681f8cbb818c6c8e40f5abb6a7d3362c447e379f33e10806159b3c&=&width=1439&height=612')">
+            <div class='content'>
+              <h2 class='title'>"Just the two of us"</h2>
+              <p class='description'> The day the dumbass left, The day everything got better for the both of us. </p>
+              <button>10/10/2021</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://media.discordapp.net/attachments/673934775400136749/899230623355502602/RueVlad.png?ex=656312c7&is=65509dc7&hm=ed3e0fb3a97a90ec9c8de45b397ed17471a7cab02203f0e41898bea12bb5d01d&=&width=1371&height=670')">
+            <div class='content'>
+              <h2 class='title'>"The Gate Keeper"</h2>
+              <p class='description'> We looked so cool in this picture, Real Mafia like, so hot.</p>
+              <button>10/17/2021</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://media.discordapp.net/attachments/673934775400136749/911852832456605726/Office.png?ex=6562d9a0&is=655064a0&hm=45298f1b8653ea067c3563bde77b54b97857fc2a2e635fcd18667809b76f46cd&=&width=1324&height=670')">
+            <div class='content'>
+              <h2 class='title'>"The Office"</h2>
+              <p class='description'>
+                So many memories have been made on that table ;)
+              </p>
+              <button>11/21/2021</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://media.discordapp.net/attachments/673934775400136749/953790430326161578/VladRueFSM_CENSORED.jpg?ex=655e888f&is=654c138f&hm=6c6e69dbb722618ce76e8f1c6f3aa7dc240e96eff86b180da19db5b0e8c65765&=&width=973&height=608')">
+            <div class='content'>
+              <h2 class='title'>"The Mafia"</h2>
+              <p class='description'>
+                Without you I would never in a million years be able to build something like the family. It's hard to fathom that we are the second largest group in the city. So many accoplishments together
+              </p>
+              <button>03/17/2022</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://media.discordapp.net/attachments/652157608668561419/1118096663584710666/image.png?ex=6565a6a9&is=655331a9&hm=5a5c6a0575a20e332e473c86659d08dcd5fed65a4d3b0f764c42449292cf54b8&=&width=773&height=670')">
+            <div class='content'>
+              <h2 class='title'>"Blackmarket"</h2>
+              <p class='description'> Hard work pays off, Biggest underground market to ever exist in the city. That's us! We did that</p>
+              <button>06/13/2023</button>
+            </div>
+          </li>
+        </ul>
+        <nav class='nav'>
+          <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+          <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+      </div>
+      
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
     <script src="script.js"></script>
 
     <script src="leader-line.min.js"></script>
