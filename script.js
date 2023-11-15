@@ -29,6 +29,7 @@ window.addEventListener('scroll', function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const timelineItems = document.querySelectorAll('.timeline-item');
+    updateConnectorLines();
 
     timelineItems.forEach(item => {
         // Randomize duration for a more natural effect
@@ -104,9 +105,6 @@ window.addEventListener('scroll', () => {
     lines.forEach(line => line.position());
 });
 
-
-
-updateConnectorLines();
 window.addEventListener('scroll', updateConnectorLines);
 
 function positionTimelineItems() {
@@ -160,13 +158,15 @@ function updateConnectorLines() {
 function positionDots() {
     const items = document.querySelectorAll('.timeline-item');
     const dots = document.querySelectorAll('#timeline-line .timeline-dot');
+    const timelineContainerTop = document.getElementById('timeline-container').getBoundingClientRect().top + window.scrollY;
 
     items.forEach((item, index) => {
         const dot = dots[index];
-        const itemRect = item.getBoundingClientRect();
-        dot.style.top = itemRect.top + window.scrollY + 'px';
+        const itemTopRelativeToContainer = item.getBoundingClientRect().top + window.scrollY - timelineContainerTop;
+        dot.style.top = itemTopRelativeToContainer + 'px';
     });
 }
+
 
 window.addEventListener('load', positionDots);
 window.addEventListener('resize', positionDots);
@@ -211,8 +211,8 @@ Particle.prototype.update = function() {
 // Create particle array
 function init() {
     particleArray = [];
-    for (let i = 0; i < 100; i++) {
-        let size = Math.random() * 5;
+    for (let i = 0; i < 200; i++) {
+        let size = Math.random() * 7;
         let x = Math.random() * (innerWidth - size * 2);
         let y = Math.random() * (innerHeight - size * 2);
         let directionX = (Math.random() * .4) - .2;

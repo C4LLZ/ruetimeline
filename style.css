@@ -123,6 +123,46 @@
 }
 
 
+.dot-date {
+    width: 80px; /* Adjust size as needed */
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border-radius: 17.5px; /* Half of the height for full roundness */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; /* Adjust position as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering horizontally */
+    color: white;
+    font-size: 16px; /* Adjust as needed */
+    z-index: 2;
+    top:-30px;
+}
+
+.start-date {
+    width: 80px; /* Adjust size as needed */
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border-radius: 17.5px; /* Half of the height for full roundness */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; /* Adjust position as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering horizontally */
+    color: white;
+    font-size: 16px; /* Adjust as needed */
+    z-index: 2;
+    top:-100px;
+}
+
 
 canvas {
     position: fixed;
