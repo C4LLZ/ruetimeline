@@ -29,27 +29,34 @@ window.addEventListener('scroll', function() {
 
 let lines = [];
 
-window.addEventListener('load', function() {
-    const items = document.querySelectorAll('.timeline-item');
-    const timelineLine = document.getElementById('timeline-line');
+function positionAndConnectLines() {
+    // Clear existing lines to prevent duplicates
+    lines.forEach(line => line.remove());
+    lines = [];
 
-    items.forEach(item => {
-        let line = new LeaderLine(
-            item.querySelector('.timeline-dot'),
-            timelineLine,
-            { color: 'white', size: 2, path: 'fluid', startSocket: 'auto', endSocket: 'auto' }
-        );
+    const timelineDots = document.querySelectorAll('#timeline-line .timeline-dot');
+    const itemDots = document.querySelectorAll('.timeline-item .timeline-dot');
 
-        lines.push(line); // Store the line reference
+    timelineDots.forEach((timelineDot, index) => {
+        const itemDot = itemDots[index];
+        if (itemDot) {
+            let line = new LeaderLine(
+                timelineDot,
+                itemDot,
+                { color: 'white', size: 5, path: 'fluid', startSocket: 'bottom', endSocket: 'top', endPlug: 'behind' }
+            );
+
+            lines.push(line);
+        }
     });
+}
+
+window.addEventListener('load', positionAndConnectLines);
+window.addEventListener('resize', positionAndConnectLines);
+window.addEventListener('scroll', () => {
+    lines.forEach(line => line.position());
 });
 
-// Update lines on scroll
-window.addEventListener('scroll', function() {
-    lines.forEach(line => {
-        line.position(); // Update line position
-    });
-});
 
 
 updateConnectorLines();
@@ -102,6 +109,20 @@ function updateConnectorLines() {
     });
 }
 
+
+function positionDots() {
+    const items = document.querySelectorAll('.timeline-item');
+    const dots = document.querySelectorAll('#timeline-line .timeline-dot');
+
+    items.forEach((item, index) => {
+        const dot = dots[index];
+        const itemRect = item.getBoundingClientRect();
+        dot.style.top = itemRect.top + window.scrollY + 'px';
+    });
+}
+
+window.addEventListener('load', positionDots);
+window.addEventListener('resize', positionDots);
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');

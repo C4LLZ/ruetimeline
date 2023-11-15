@@ -6,25 +6,57 @@
 
 #timeline-line {
     position: absolute;
-    left: 50%; /* Center the line */
+    left: 49%; /* Center the line */
     height: 1000%;
-    width: 2px;
-    background-color: #333;
+    background: rgba(255, 255, 255, 0.15); /* Slightly more opaque */
+    border-radius: 10px; /* Adjust as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    backdrop-filter: blur(15px); /* Stronger blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* More visible border */
+    width: 4px; /* Adjust the width of the timeline */
 }
 
 .timeline-item {
-    position: relative;
-    min-width: 100px;
-    max-width:750px
+    width: 40%;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: Light border for better definition */
+    padding: 20px; /* Some padding around content */
+    margin-bottom: 20px; /* Space between items */
+    color: white; /* Assuming you want light text for dark mode */
+}
+
+.timeline-item img {
+    max-width: 100%; /* Ensure image fits in the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: Rounded corners for images */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Shadow for images */
+}
+
+.timeline-item p {
+    margin-top: 10px; /* Space between image and text */
+    /* Additional styling for the description text */
+}
+
+.leader-line {
+    stroke: rgba(255, 255, 255, 0.8); /* Lighter color for the line */
+    stroke-width: 2; /* Adjust the thickness of the line */
 }
 
 .timeline-dot {
     position: absolute;
-    width: 10px; /* Dot size */
-    height: 10px; /* Dot size */
-    background-color: #fff; /* Dot color */
+    width: 20px; /* Dot size */
+    height: 20px; /* Dot size */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border-radius: 50%; /* Circular dots */
+    width: 10px; /* Size of the dot */
+    height: 10px; /* Size of the dot */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Light border for definition */
     border-radius: 50%;
-    top: 50%;
+    top: 20%;
     transform: translateY(-50%);
     left: -5px;
 }
@@ -32,19 +64,6 @@
 .timeline-item:nth-child(even) .timeline-dot {
     left: auto;
     right: -5px;
-}
-
-.timeline-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px; /* Adjust as needed for roundness */
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-
-.timeline-item p {
-    background-color: white;
-    padding: 5px;
 }
 
 .timeline-connector {
