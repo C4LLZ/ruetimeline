@@ -23,6 +23,10 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 
 #landing-page h1 {
     font-size: 3em; /* Adjust size as needed */
@@ -135,6 +139,37 @@ body::-webkit-scrollbar {
     z-index: 1; /* Adjust as needed */
 }
 
+
+/* Styles for the End Item */
+.timeline-enditem {
+  width: 60%;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  backdrop-filter: blur(10px); /* Blur effect for the background */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: Light border for better definition */
+  padding: 20px; /* Some padding around content */
+  margin-bottom: 20px; /* Space between items */
+  color: white; /* Assuming you want light text for dark mode */
+  animation: float 4s ease-in-out infinite; /* Add floating animation */
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  position:absolute;
+  top:-200px;
+  text-align: center;
+}
+
+/* Floating animation keyframes */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px); /* Adjust the floating height */
+  }
+}
 
 .dot-date {
     width: 80px; /* Adjust size as needed */
